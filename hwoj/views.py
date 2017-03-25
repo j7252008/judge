@@ -33,8 +33,6 @@ def regist(request):
 
 #登录
 def login(request):
-	return HttpResponse("哈哈，死胖子！！")
-'''
 	if request.method == 'POST':
 		uf = UserForm(request.POST)
 		if uf.is_valid():
@@ -53,7 +51,7 @@ def login(request):
 				return HttpResponseRedirect('/')
 	else:
 		uf=UserForm()
-		return render(request, 'login.html', {'uf':uf})'''
+		return render(request, 'login.html', {'uf':uf})
 
 #登录成功
 def home(request):

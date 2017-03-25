@@ -1,19 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>登陆</title>
+	<title>登陆</title>
+	
+	<style>
+	body{
+		background-image: url("{{STATIC_URL}}img/login.jpg");
+		background-position:center;
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		background-size: cover;
+	}
+
+	table{
+		padding:35px 45px 30px 45px;
+		background-color: black;
+		opacity:0.6;
+		filter:alpha(opacity=60);
+	}
+
+	form{
+		background-color: black;
+		font-size:13px;
+		color: white;
+	}
+
+	p{
+		padding-top: 15px;
+		text-align: right;
+	}
+
+	.login{
+		background: #009999;
+		border:thick;
+		width:75px;
+		height:25px;
+		color: white;
+		font-size: 16px;
+	}
+
+	a{
+		font-size: 16px;
+		margin-left: 30px;
+		color: white;
+	}
+</style>
 </head>
 
 <body>
-<h1>登陆页面：</h1>
-<form method = 'post' enctype="multipart/form-data">
+<table align="center" style="margin-top: 200px;">
+<tr>
+<th style="color:white;">登录</th>
+</tr>
+<tr>
+<td>
+	<form  method = 'post' enctype="multipart/form-data">
   	{% csrf_token %}
     {{uf.as_p}}
-    <input type="submit" value = "ok" />
+    <br/>
+    <input class="login" type="submit" value = "ok" />
+    <a href="http://127.0.0.1:8000/regist/">注 册</a>
 </form>
-<br>
-<a href="http://127.0.0.1:8000/regist/">注册</a>
+	<td/>
+	<tr/>
+</table>
 </body>
 </html>
