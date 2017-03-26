@@ -41,11 +41,11 @@ def login(request):
 			password=uf.cleaned_data['password']
 
 			#获取表单数据与数据库比较
-			user=User.objects.filter(username__exact= username, password__exact=password)
+			user=User.objects.filter(username__exact=username, password__exact=password)
 			if user:
 				#比较成功，跳转主页
 				response=HttpResponseRedirect('home/')
-				response.set_cookie('username', username, 3600)
+				response.set_cookie('username', username, 10)
 				return response
 			else:
 				return HttpResponseRedirect('/')
@@ -56,4 +56,9 @@ def login(request):
 #登录成功
 def home(request):
 	username=request.COOKIES.get('username', '')
-	return render(request, 'home.html', {'username':username})
+
+	if username.is_valid():
+		return render(request, 'home.html', {'username':username})
+	else:
+		uf=UserForm()
+		return render(request, 'login.html', {'uf':uf})
