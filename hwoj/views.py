@@ -56,9 +56,7 @@ def login(request):
 #登录成功
 def home(request):
 	username=request.COOKIES.get('username', '')
-
-	if username.is_valid():
-		return render(request, 'home.html', {'username':username})
-	else:
-		uf=UserForm()
-		return render(request, 'login.html', {'uf':uf})
+	return render(request, 'home.html', {'username':username})
+	# else:
+	# 	uf=UserForm()
+	# 	return render(request, 'login.html', {'uf':uf})
