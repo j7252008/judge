@@ -29,5 +29,5 @@ django：1.10.6
 	1）setting中修改DATABASES下 'USERNAME': 为 'USER':
 
 4.（windows下）使用model_to_dict()出现'charmap' codec can't encode characters....
-	1）cmd编码设置为936（命令：chcp 936）,无效使用管理员打开cmd，右击选择属性切换
+	1）cmd编码设置为936（命令：chcp 936）,无效使用管理员打开cmd，右击选择属性切换。
 
