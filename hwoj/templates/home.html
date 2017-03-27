@@ -15,25 +15,26 @@ body {
 }
 
 .nav {
-	position: absolute;
+	position: fixed;
+    width: 100%;
+    z-index: 1000;
+	margin: 0 auto;
+	padding: 0px;
 	left: 0px;
 	top: 0px;
-	right: 0px;
 	width: 100%;
 	height: 75px;
 	background: #339966; 
 }
 
 li {
-	display: inline;
-	width: 15%;
+	outline: none;
 	min-width: 60px;
 	float: left;
-	left: 20px;
 	color: white;
 	list-style: none;
 	margin-top: 10px;
-	text-align: center;
+	text-align: right;
 	font-family: 微软雅黑;
 	font-size: 16px;
 }
@@ -53,10 +54,20 @@ a:VISITED {
 
 #appname {	
 	margin-top: 6px;
+	margin-left: 10%;
 	width: 230px;
 	font-family: 微软雅黑;
 	font-size: 23px;
 }
+
+label{
+	margin-left: 10px;
+	font-family: 微软雅黑;
+	font-size: 14px;
+	font-weight: normal; 
+	color: #303030;
+}
+
 .title {
 	top: 90px;
 	position: relative;
@@ -102,11 +113,8 @@ a:VISITED {
 <body>
 	<div class="nav">
 		<ul>
-			<li></li>
 			<li id="appname">HWOJ 在线评测系统</li>
-			<li></li>
-			<li></li>
-			<li style="text-align: right;">{{username}}</li>
+			<li style="margin-left: 50%; text-align: right;">欢迎你！ {{username}}</li>
 			<li><a href="/">注销</a></li>
 		</ul>
 	</div>
@@ -115,8 +123,7 @@ a:VISITED {
 
 		<div class="listitem">
 			<a href=""></a> <br />
-			<label style="margin-left: 10px;font-family:微软雅黑;
-			font-size:14px;font-weight:normal; color: #303030;">状态：${plist.pstate}
+			<label >状态：${plist.pstate}
 			</label>
 		</div>
 
