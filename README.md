@@ -9,6 +9,6 @@ judeg： 主目录
 hwoj： 网站目录
 hwoj/templates: 模板目录，放置所有.html文件
 hwoi/config: 配置文件目录
-hwoj/tmeme：主题目录
-hwoj/tmeme/css: 样式表目录
-hwoj/tmeme/img: 相关图片
+hwoj/static：静态文件
+hwoj/static/css: 样式表
+hwoj/static/img: 相关图片
