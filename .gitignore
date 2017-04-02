@@ -11,4 +11,4 @@ runs
 local_settings.py
 lancer
 old_proj_dbe
-
+migrations/
