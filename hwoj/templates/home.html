@@ -26,7 +26,7 @@ body {
 	background: #339966; 
 }
 
-li {
+.nav li {
 	outline: none;
 	min-width: 60px;
 	float: left;
@@ -38,16 +38,16 @@ li {
 	font-size: 16px;
 }
 
-a {
+.nav a {
 	color: white;
 	text-decoration: none;
 }
 
-a:hover{
+.nav a:hover{
 	color: #e0e0e0;
 }
 
-a:VISITED {
+.nav a:VISITED {
 	color: white;
 }
 
@@ -106,7 +106,7 @@ label{
 .listitem a:VISITED {
 	color: #009966;
 }
-</style>
+</style> 
 </head>
 
 <body>
@@ -117,16 +117,21 @@ label{
 			<li><a href="/">注销</a></li>
 		</ul>
 	</div>
+	
 	<div class="title">作业列表</div>
 	<div class="list">
+		{% load paginate_page %} <!-- # 首先必须通过load模板标签载入分页标签 -->
+		{% paginate questions 7 %} 
 		{% for question in questions %}
-		<div class="listitem">
+   		<div class="listitem">
 			<a href=""></a>
 			<br/>
 			<label>{{ question.qname }}</label>>
 			<!-- <label>状态：${plist.pstate}</label> -->
 		</div>
 		{% endfor %}
+		{% include 'pagination.html' %}
+	</div>
 	</div>
 </body>
 </html>
