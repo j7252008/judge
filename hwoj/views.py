@@ -12,7 +12,7 @@ from hwoj.models import User, Question
 #表单
 class UserForm(forms.Form):
 	username = forms.CharField(label='用户名', max_length=50)
-	password = forms.CharField(label='密码', max_length=50)
+	password = forms.CharField(label='密　码', max_length=50)
 
 #注册
 def regist(request):
@@ -55,7 +55,7 @@ def login(request):
 def home(request):
 	username=request.COOKIES.get('username')
 
-	if username:	
+	if username:
 		#return HttpResponseRedirect('synclist/p=1', {'username':username})
 		questions=Question.objects.all()
 		return render(request, 'home.html', {'username':username, 'questions': questions,})

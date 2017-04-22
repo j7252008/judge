@@ -4,16 +4,83 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>注册</title>
+    <style>
+      html,body{
+        margin: 0;
+        padding: 0;
+        color: #555;
+        font-size: 15px;
+        line-height: 1.7;
+        font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
+        background: #f7fafc;
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
+      .sign-block{
+        position: relative;
+        width: 400px;
+        margin: 200px auto;
+        text-align: center;
+      }
+      .sign-block h2{
+        -webkit-margin-before:0;
+      }
+      .sign-block h2 span{
+        border-bottom: 2px solid #0f88eb;
+        width: 150px;
+        text-decoration: none;
+        margin: 0 20px;
+      }
+      .sign-block h2 span a{
+        text-decoration: none;
+      }
+      .sign-block p{
+        margin: 0;
+      }
+      #confirm-button{
+        background-color: #0f88eb;
+        width: 224px;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        margin-left: 15px;
+        margin-top: 15px;
+        color: #fff;
+      }
+      .text-block{
+        padding: 30px;
+        border: 1px solid #d5d5d5;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+      .text-block input{
+        height: 22px;
+        width: 200px;
+        border-radius: 5px;
+        box-shadow: none;
+        margin: 0 0 5px;
+        padding: 0 10px;
+        line-height: 22px;
+      }
+      .text-block input:first-of-type{
+        margin-bottom: 10px;
+      }
+    </style>
 </head>
 
 <body>
-<h1>注册页面：</h1>
+<div class = "sign-block">
 <form method = 'post' enctype="multipart/form-data">
+
+  <div class="text-block">
+    <h2><span>注册</span><span><a href="http://127.0.0.1:8000/login/">登陆</a></span></h2>
     {% csrf_token %}
-    {{uf.as_p}}
-    <input type="submit" value = "ok" />
+     {{uf.as_p}}
+     <input id="confirm-button" type="submit" value = "确认" />
+  </div>
+
 </form>
 <br>
-<a href="http://127.0.0.1:8000/login/">登陆</a>
+
+</div>
 </body>
 </html>
